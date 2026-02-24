@@ -24,8 +24,13 @@ try:
 
     # 자료 보기
     cur.execute("select * from friends")
-    print(cur.fetchone())   # 한 개의 레코드(행) 읽기
-    
+    # print(cur.fetchone())   # 한 개의 레코드(행) 읽기
+    print(cur.fetchall())
+    print()
+    cur.execute("select name,phone,addr from friends")
+    for r in cur:
+        # print(r)
+        print(r[0] + ' ' + r[1] + ' ' + r[2])
 except Exception as e:
     print('err : ', e)
     conn.rollback()
