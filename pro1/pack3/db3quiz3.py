@@ -17,7 +17,7 @@ def chulbal():
         sql = """
             select jikwongen as 성별, count(*) as 직원수, avg(jikwonpay) as 평균급여
             from jikwon
-            group by jikwongen having jikwongen is not null
+            group by jikwongen
         """
 
         cursor.execute(sql)

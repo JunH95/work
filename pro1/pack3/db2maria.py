@@ -16,7 +16,7 @@ print(conn)
 conn.close()
 """
 
-# snagdata 자료 CRUD
+# sangdata 자료 CRUD
 config = {
     'host':'127.0.0.1',
     'user':'root',
@@ -78,7 +78,7 @@ def myFunc():
             print('삭제 실패')
         
         conn.commit()
-        
+
         # 자료 읽기
         sql = "select code, sang, su, dan from sangdata"
         cursor.execute(sql)
