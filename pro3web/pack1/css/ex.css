@@ -1,0 +1,22 @@
+/* css 파일의 주석 */
+#myid2{
+    background-color: yellow;
+    color: red;
+    font-size: 20px;
+}
+
+/* 동적 선택자 */
+/* input:focus{background-color: #aabbcc;}  16진수 */
+/* input:focus{background-color: silver;} */
+/*input:focus{background-color: rgb(255,255,0);}*/
+input:focus{background-color: rgb(100%,100%,0%);}
+
+a:link{ text-decoration: none;}  /* 밑줄 text-decoration*/
+a:hover{color: orange; font-size: 30px;}
+
+/* 선택 연습 */
+b{font-size: 8px;}
+div b{font-size: 16px;}   /* div 태그 자손들 모두 해당 */
+div > b{font-size: 20px; color: blue;}   /* div 태그 직계자식 만 해당 */
+div b#hi{font-size: 24px;}      /* id */
+div b.hello{font-size: 40px; color: red;}   /* class */
