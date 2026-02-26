@@ -13,6 +13,7 @@ if method == "POST":
     length = int(os.environ.get("CONTENT_LENGTH", 0))
     body = sys.stdin.read(length)
 else:       # GET 일 때
+    
     body = os.environ.get("QUERY_STRING", "")
 
 params = urllib.parse.parse_qs(body)
