@@ -48,5 +48,23 @@ def add_to_cart(product_id):
 
     return redirect(url_for("show_cart"))  # cart에 저장 후 장바구니 보기로 이동
 
+# 장바구니 부분 삭제
+@app.route("/remove/<item_name>")
+def remove_to_cart(item_name):
+    cart = session.get("cart")
+
+    if item_name in cart:
+        del cart[item_name]
+
+    session["cart"] = cart
+    return redirect(url_for("show_cart"))
+
+# 장바구니 비우기
+@app.route("/clear")
+def clear_cart():
+    session.pop("cart", None)   # 세션에 여러 개의 키중 "cart"라는 키를 삭제
+    return redirect(url_for("show_cart"))
+
+
 if __name__=="__main__":
     app.run(debug=True)
