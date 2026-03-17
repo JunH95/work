@@ -219,3 +219,16 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,python,visualstudiocode
+
+# Claude Code
+.claude/
+
+# Database files
+*.dat
+
+# Uploaded files
+static/uploads/
+**/static/uploads/
+
+# MariaDB / local DB
+*.db
