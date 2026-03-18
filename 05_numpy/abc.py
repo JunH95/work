@@ -29,3 +29,8 @@ def grades_variance(grades):
         # return vari / len(grades) - 1
 
 print("분산은", grades_variance(grades))
+
+def grades_std(grades):
+    return grades_variance(grades) ** 0.5
+
+
