@@ -61,3 +61,20 @@ print('군집 결과 검증')
 print('교차표 - 실제 라벨 vs 군집 결과')
 ct = pd.crosstab(y, clusters)
 print('ct : \n', ct)
+
+print("교차표 보조 설명 각 실제 클래스가 가장 많이 속한 집합")
+for i in range(ct.shape[0]):
+    max_cluster = ct.iloc[i].argmax()
+    print(f"실제 클래스 {i} -> 군집 {max_cluster} (갯수:{ct.iloc[i].max()})")
+
+# 정량적 평가 : 군집결과가 실제 라벨과 얼마나 일치하는지 평가
+
+from sklearn.metrics import adjusted_mutual_info_score, normalized_mutual_info_score
+ari = adjusted_mutual_info_score(y, clusters)
+print(f"평가지표 : ARI -  {ari:.4f}")
+# 해석 기준 : 0.7이상(잘된 그룹), 0.5~0.7(보통), 0.5미만(잘 안된 그룹)
+
+# normalized_mutual_info_score - 정보량 기준 얼마나 유사한지
+nmi = normalized_mutual_info_score(y, clusters)
+print(f"평가지표 : NMI -  {nmi:.4f}")
+
